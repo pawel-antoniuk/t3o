@@ -7,7 +7,7 @@ set(Boost_USE_STATIC_LIBS OFF)
 set(Boost_USE_MULTITHREADED ON)  
 set(Boost_USE_STATIC_RUNTIME OFF)
 set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
-find_package(Boost 1.45.0 COMPONENTS system thread serialization) 
+find_package(Boost 1.61.0 COMPONENTS system thread serialization) 
 find_package(Threads)
 
 if(Boost_FOUND)
