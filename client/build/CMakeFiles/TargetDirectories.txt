@@ -1,3 +1,0 @@
-/root/dev/t3o/client/build/CMakeFiles/edit_cache.dir
-/root/dev/t3o/client/build/CMakeFiles/rebuild_cache.dir
-/root/dev/t3o/client/build/CMakeFiles/programe.dir
