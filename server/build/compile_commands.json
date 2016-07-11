@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/root/dev/t3o/server/build",
+  "command": "/usr/bin/clang++    -I/usr/local/include -I/root/dev/t3o/server   -std=c++1y -stdlib=libc++ -Wall -g   -o CMakeFiles/programe.dir/src/main.cxx.o -c /root/dev/t3o/server/src/main.cxx",
+  "file": "/root/dev/t3o/server/src/main.cxx"
+}
+]
