@@ -31,7 +31,7 @@ public:
 		using namespace std::placeholders;
 		auto complete_binder 
 			= std::bind(&basic_async_reader<InputSerializer>
-					::inner_operation_complete, this, _1);
+					::inner_operation_complete, this, std::placeholders::_1);
 		auto disconnect_binder 
 			= std::bind(&basic_async_reader<InputSerializer>
 					::_handle_disconnect, this);
