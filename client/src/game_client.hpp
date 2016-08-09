@@ -37,7 +37,7 @@ public:
 		using namespace std::placeholders;
 		tcp::resolver::query query(addr, port);
 		_resolver.async_resolve(query,
-				std::bind(&game_client::_handle_resolve, this, _1, _2, handler));
+				std::bind(&game_client::_handle_resolve, this, std::placeholders::_1, std::placeholders::_2, handler));
 	}
 
 	void async_sign_in(unsigned mode, const std::string& name, 
@@ -80,7 +80,7 @@ private:
 		if(er) return;
 		using namespace std::placeholders;
 		_socket.async_connect(*it, std::bind(&game_client::_handel_connect,
-					this, _1, handler));
+					this, std::placeholders::_1, handler));
 	}
 
 	void _handel_connect(const boost::system::error_code& er, 
@@ -152,11 +152,11 @@ private:
 			detail::protocol::game_end,
 			detail::protocol::field_set_packet
 		>(
-			std::bind(&game_client::_handle_keepalive, this, _1),
+			std::bind(&game_client::_handle_keepalive, this, std::placeholders::_1),
 			std::bind(&game_client::_handle_server_handshake,
-				this, _1),
-			std::bind(&game_client::_handle_game_end, this, _1),
-			std::bind(&game_client::_handle_field_set, this, _1));
+				this, std::placeholders::_1),
+			std::bind(&game_client::_handle_game_end, this, std::placeholders::_1),
+			std::bind(&game_client::_handle_field_set, this, std::placeholders::_1));
 	}
 
 	boost::asio::ip::tcp::socket _socket;
