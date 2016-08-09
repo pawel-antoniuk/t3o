@@ -32,7 +32,7 @@ public:
 		using namespace std::placeholders;
 		auto complete_binder 
 			= std::bind(&basic_async_writer<OutputSerializer>
-					::inner_operation_complete, this, _1);
+					::inner_operation_complete, this, std::placeholders::_1);
 		auto disconnect_binder 
 			= std::bind(&basic_async_writer<OutputSerializer>
 					::_handle_disconnect, this);
