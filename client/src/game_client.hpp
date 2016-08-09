@@ -72,6 +72,10 @@ public:
 	auto width() const { return _width; }
 	auto height() const { return _height; }
 
+	//flags
+	auto is_connected() const { return _is_connected; }
+	auto is_logged_in() const { return _is_logged_in; }
+
 private:
 	void _handle_resolve(const boost::system::error_code& er,
 			boost::asio::ip::tcp::resolver::iterator it,
